@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Minify - 忽略命名(mangle names)
+title: 精简忽略命名(Minify mangle names)
 description: 上下文 - 作用域 - 重命名变量
 permalink: /docs/plugins/minify-mangle-names/
 package: babel-plugin-minify-mangle-names
