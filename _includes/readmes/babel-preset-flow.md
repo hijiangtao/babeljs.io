@@ -1,6 +1,6 @@
 # babel-preset-flow
 
-> 所有 Flow 的插件的 Babel preset 。
+> 支持所有 Flow 插件的 Babel preset。
 
 该 preset 包含以下这些插件:
 
