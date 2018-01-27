@@ -52,7 +52,7 @@ require("babel-core").transform("code", {
 }
 ```
 
-你也可以传递 `es2015` preset 的选项.
+你也可以传递选项到 `es2015` preset。
 
 ```json
 {
