@@ -38,21 +38,5 @@
   url: /faq
 - title: 团队
   url: /team
-- title: 友情链接
-  url: /doc-url
-  subnav:
-    - items:
-        - title: 印记中文
-          url: https://docschina.org/
-        - title: Vue.js 中文
-          url: https://vuefe.cn/
-        - title: React.js 中文
-          url: https://doc.react-china.org/
-        - title: rollup.js 中文
-          url: https://rollupjs.cn/
-        - title: Node.js 中文
-          url: http://nodejs.cn/
-        - title: webpack 中文
-          url: https://doc.webpack-china.org/
-        - title: parcel 中文
-          url: https://www.parceljs.io/
+- title: 印记中文
+  url: https://docschina.org/
