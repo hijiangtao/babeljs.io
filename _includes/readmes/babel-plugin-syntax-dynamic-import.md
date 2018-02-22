@@ -1,16 +1,16 @@
 # babel-plugin-syntax-dynamic-import
 
-Allow parsing of `import()`.
+解析 `import()`。
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-syntax-dynamic-import
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-plugin-syntax-dynamic-import
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins syntax-dynamic-import script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
