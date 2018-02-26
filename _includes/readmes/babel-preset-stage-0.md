@@ -1,6 +1,6 @@
 # babel-preset-stage-0
 
-> 包含 stage 0 特性的一组插件的 Babel preset。
+> 为包含 stage 0 状态插件准备的 Babel preset。
 
 ## 安装
 
@@ -10,7 +10,7 @@ npm install --save-dev babel-preset-stage-0
 
 ## 使用
 
-### 通过 `.babelrc` 文件 (推荐)
+### 通过 `.babelrc` 文件（推荐）
 
 **.babelrc**
 
