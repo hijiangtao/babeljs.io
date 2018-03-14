@@ -1,30 +1,30 @@
 # babel-plugin-transform-simplify-comparison-operators
 
-Convert `===` and `!==` to `==` and `!=` if their types are inferred to be the same.
+如果它们的类型推断为相同，则将 `===` 和 `!==` 转换为 `==` 和 `!=`。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 typeof foo === "object";
 ```
 
-**Out**
+**输出**
 
 ```javascript
 typeof foo == "object";
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-simplify-comparison-operators
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -34,13 +34,13 @@ npm install babel-plugin-transform-simplify-comparison-operators
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-simplify-comparison-operators script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

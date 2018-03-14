@@ -1,20 +1,19 @@
 # babel-plugin-transform-strict-mode
 
-> This plugin places a `"use strict";` directive at the top of all files to enable [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+> 该插件会在所有文件顶部放置 `use strict;`，以启用[严格模式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)。
 
-This plugin may be enabled via `babel-plugin-transform-es2015-modules-commonjs`.
-If you wish to disable it you can either turn `strict` off or pass
-`strictMode: false` as an option to the commonjs transform.
+该插件可以通过 `babel-plugin-transform-es2015-modules-commonjs` 来启用。
+如果你想禁用它，你可以关闭 `strict` 或者在 commonjs 转换中添加 `strictMode: false` 选项。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 foo();
 ```
 
-**Out**
+**输出**
 
 ```javascript
 "use strict";
@@ -22,19 +21,19 @@ foo();
 foo();
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-strict-mode
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+输出配置:
 
 ```json
 {
@@ -42,7 +41,7 @@ Without options:
 }
 ```
 
-With options:
+包含选项:
 
 ```json
 {
@@ -54,13 +53,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-strict-mode script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

@@ -1,10 +1,10 @@
 # babel-plugin-undeclared-variables-check
 
-> This plugin throws a compile-time error on references to undeclared variables.
+> 在引用未声明变量时，使用该插件会在编译时抛出异常错误。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 function foo() {}
@@ -12,7 +12,7 @@ foo();
 bar();
 ```
 
-**Out**
+**输出**
 
 ```
 ReferenceError: stdin: Line 3: Reference to undeclared variable "bar" - did you mean "foo"?
@@ -23,15 +23,15 @@ ReferenceError: stdin: Line 3: Reference to undeclared variable "bar" - did you 
   4 |
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-undeclared-variables-check
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` （推荐）
 
 **.babelrc**
 
@@ -41,13 +41,13 @@ npm install --save-dev babel-plugin-undeclared-variables-check
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins undeclared-variables-check script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

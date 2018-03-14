@@ -1,32 +1,32 @@
 # babel-plugin-transform-undefined-to-void
 
-Some JavaScript implementations allow undefined to be overwritten, this may lead to peculiar bugs that are extremely hard to track down.
+许多 JavaScript 实现允许 undefined 被覆盖，这可能会导致代码出现难以追踪的特殊错误。
 
-This plugin transforms `undefined` into `void 0` which returns undefined regardless of if it's been reassigned.
+如果返回的 undefined 被覆盖，该插件会将 `undefined` 转译成 `void 0`。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 foo === undefined;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 foo === void 0;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-undefined-to-void
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -36,13 +36,13 @@ npm install babel-plugin-transform-undefined-to-void
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-undefined-to-void script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

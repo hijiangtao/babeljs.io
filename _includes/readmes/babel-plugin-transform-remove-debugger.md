@@ -1,29 +1,29 @@
 # babel-plugin-transform-remove-debugger
 
-This plugin removes all `debugger;` statements.
+该插件会删除所有 `debugger;` 语句。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 debugger;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-remove-debugger
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（Recommended）
 
 **.babelrc**
 
@@ -33,13 +33,13 @@ npm install babel-plugin-transform-remove-debugger
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-remove-debugger script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
