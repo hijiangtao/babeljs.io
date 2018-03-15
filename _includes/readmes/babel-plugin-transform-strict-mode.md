@@ -1,6 +1,6 @@
 # babel-plugin-transform-strict-mode
 
-> 该插件会在所有文件顶部放置 `use strict;`，以启用[严格模式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)。
+> 该插件会在所有文件顶部放置 `"use strict";`，以启用[严格模式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)。
 
 该插件可以通过 `babel-plugin-transform-es2015-modules-commonjs` 来启用。
 如果你想禁用它，你可以关闭 `strict` 或者在 commonjs 转换中添加 `strictMode: false` 选项。
@@ -33,7 +33,7 @@ npm install --save-dev babel-plugin-transform-strict-mode
 
 **.babelrc**
 
-输出配置:
+不包含选项:
 
 ```json
 {
