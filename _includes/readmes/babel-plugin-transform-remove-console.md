@@ -1,30 +1,30 @@
 # babel-plugin-transform-remove-console
 
-This plugin removes all `console.*` calls.
+该插件会移除所有 `console.*` 的调用。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 console.log("foo");
 console.error("bar");
 ```
 
-**Out**
+**输出**
 
 ```javascript
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-remove-console
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -42,13 +42,13 @@ npm install babel-plugin-transform-remove-console
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-remove-console script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -56,6 +56,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
-+ `exclude` - An array of console methods to exclude from removal.
++ `exclude` - 排除不需要移除 console 方法的数组。

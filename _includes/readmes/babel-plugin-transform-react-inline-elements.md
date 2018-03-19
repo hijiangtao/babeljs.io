@@ -1,16 +1,16 @@
 # babel-plugin-transform-react-inline-elements
 
-> Replaces the `React.createElement` function with one that is more optimized for production: `babelHelpers.jsx`.
+> 使用更适合生产环境的 `babelHelpers.jsx` 函数替换 `React.createElement` 。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 <Baz foo="bar" key="1"></Baz>;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 babelHelpers.jsx(Baz, {
@@ -18,7 +18,7 @@ babelHelpers.jsx(Baz, {
 }, "1");
 
 /**
- * Instead of
+ * 替代
  *
  * React.createElement(Baz, {
  *   foo: "bar",
@@ -30,20 +30,20 @@ babelHelpers.jsx(Baz, {
 **Deopt**
 
 ```js
-// The plugin will still use React.createElement when `ref` or `object rest spread` is used
+// 当使用 `ref` 或 `object rest spread` 时，插件仍然会使用 React.createElement。
 <Foo ref="bar" />
 <Foo {...bar} />
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-react-inline-elements
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -53,13 +53,13 @@ npm install --save-dev babel-plugin-transform-react-inline-elements
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-react-inline-elements script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -67,6 +67,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## References
+## 参考
 
-* [[facebook/react#3228] Optimizing Compiler: Inline React Elements](https://github.com/facebook/react/issues/3228)
+* [[facebook/react#3228] 优化编译器：内联 React 元素](https://github.com/facebook/react/issues/3228)

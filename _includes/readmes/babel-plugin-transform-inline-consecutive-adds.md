@@ -1,10 +1,10 @@
 # babel-plugin-transform-inline-consecutive-adds
 
-This plugin inlines consecutive property assignments, array pushes, etc.
+该插件内嵌连续的属性赋值，数组 push 等。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 const foo = {};
@@ -19,7 +19,7 @@ bar.push(1);
 bar.push(2);
 ```
 
-**Out**
+**输出**
 
 ```javascript
 const foo = {
@@ -33,15 +33,15 @@ const foo = {
 const bar = [1, 2];
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-inline-consecutive-adds
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -51,13 +51,13 @@ npm install babel-plugin-transform-inline-consecutive-adds
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-inline-consecutive-adds script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

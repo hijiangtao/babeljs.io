@@ -1,18 +1,18 @@
 # babel-plugin-transform-object-set-prototype-of-to-assign
 
-> This plugin will transform all `Object.setPrototypeOf` calls to a method that will do a shallow defaults of all properties.
+> 该插件将所有的 `Object.setPrototypeOf` 调用转换为一个方法，该方法会设置所有属性的浅层默认值。
 
-**NOTE:** There are some caveats when using this plugin, see the [`babel-plugin-transform-proto-to-assign` README](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-proto-to-assign) for more information..
+**注意：** 使用此插件时有一些注意事项，请参阅 [`babel-plugin-transform-proto-to-assign` README](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-proto-to-assign) 了解更多信息。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 Object.setPrototypeOf(bar, foo);
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var _defaults = ...;
@@ -20,15 +20,15 @@ var _defaults = ...;
 _defaults(bar, foo);
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-object-set-prototype-of-to-assign
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -38,13 +38,13 @@ npm install --save-dev babel-plugin-transform-object-set-prototype-of-to-assign
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-object-set-prototype-of-to-assign script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

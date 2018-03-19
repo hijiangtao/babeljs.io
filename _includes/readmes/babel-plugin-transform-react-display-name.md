@@ -1,17 +1,17 @@
 # babel-plugin-transform-react-display-name
 
-> Add displayName to `createReactClass` (and `React.createClass`) calls
+> 将 displayName 添加到 `createReactClass`（以及 `React.createClass`） 的调用中。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```js
 var foo = React.createClass({}); // React <= 15
 var bar = createReactClass({});  // React 16+
 ```
 
-**Out**
+**输出**
 
 ```js
 var foo = React.createClass({
@@ -22,15 +22,15 @@ var bar = createReactClass({
 }); // React 16+
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-react-display-name
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -40,13 +40,13 @@ npm install --save-dev babel-plugin-transform-react-display-name
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-react-display-name script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

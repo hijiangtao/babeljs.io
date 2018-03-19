@@ -1,10 +1,10 @@
 # babel-plugin-transform-proto-to-assign
 
-> This plugin allows Babel to transform all `__proto__` assignments to a method that will do a shallow copy of all properties.
+> 这个插件允许 Babel 将所有 `__proto` 赋值转换为一个方法，该方法会将所有属性进行浅拷贝。
 
-## Detail
+## 详情
 
-This means that the following **will** work:
+这意味着**将会**按以下方式工作：
 
 ```javascript
 var foo = { a: 1 };
@@ -14,7 +14,7 @@ bar.a; // 1
 bar.b; // 2
 ```
 
-however the following **will not**:
+但是**不会**按以下方式：
 
 ```javascript
 var foo = { a: 1 };
@@ -22,20 +22,20 @@ var bar = { b: 2 };
 bar.__proto__ = foo;
 bar.a; // 1
 foo.a = 2;
-bar.a; // 1 - should be 2 but remember that nothing is bound and it's a straight copy
+bar.a; // 1 - 应该是2，但请记住，在没有任何限制的情况下，它是一个简单的拷贝
 ```
 
-This is a case that you have to be aware of if you intend to use this plugin.
+如果你打算使用此插件，则必须注意这种情况。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 bar.__proto__ = foo;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var _defaults = ...;
@@ -43,15 +43,15 @@ var _defaults = ...;
 _defaults(bar, foo);
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-proto-to-assign
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -61,13 +61,13 @@ npm install --save-dev babel-plugin-transform-proto-to-assign
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-proto-to-assign script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

@@ -1,10 +1,10 @@
 # babel-plugin-transform-object-rest-spread
 
-> This plugin allows Babel to transform rest properties for object destructuring assignment and spread properties for object literals.
+> 该插件允许 Babel 转译对象析构赋值的 rest 属性和对象字面量的 spread 属性。
 
-## Example
+## 示例
 
-### Rest Properties
+### Rest 属性
 
 ```js
 let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
@@ -13,22 +13,22 @@ console.log(y); // 2
 console.log(z); // { a: 3, b: 4 }
 ```
 
-### Spread Properties
+### Spread 属性
 
 ```js
 let n = { x, y, ...z };
 console.log(n); // { x: 1, y: 2, a: 3, b: 4 }
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-object-rest-spread
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -38,13 +38,13 @@ npm install --save-dev babel-plugin-transform-object-rest-spread
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-object-rest-spread script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -52,13 +52,13 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `useBuiltIns`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-By default, this plugin uses Babel's `extends` helper which polyfills `Object.assign`. Enabling this option will use `Object.assign` directly.
+默认情况下，此插件使用 `extends` helper 来填充 `Object.assign`。启用此选项将直接使用 `Object.assign`。
 
 **.babelrc**
 
@@ -70,19 +70,19 @@ By default, this plugin uses Babel's `extends` helper which polyfills `Object.as
 }
 ```
 
-**In**
+**输入**
 
 ```js
 z = { x, ...y };
 ```
 
-**Out**
+**输出**
 
 ```js
 z = Object.assign({ x }, y);
 ```
 
-## References
+## 参考
 
-* [Proposal: Object Rest/Spread Properties for ECMAScript](https://github.com/sebmarkbage/ecmascript-rest-spread)
+* [提案：ECMAScript 对象中的 Rest/Spread 属性](https://github.com/sebmarkbage/ecmascript-rest-spread)
 * [Spec](http://sebmarkbage.github.io/ecmascript-rest-spread)

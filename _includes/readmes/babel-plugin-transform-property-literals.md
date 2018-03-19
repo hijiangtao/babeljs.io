@@ -1,10 +1,10 @@
 # babel-plugin-transform-property-literals
 
-This plugin allows Babel to transform valid identifier property key literals into identifiers.
+该插件允许 Babel 将有效的标识符属性 key 的字面量转换为标识符。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 var foo = {
@@ -19,7 +19,7 @@ var foo = {
 };
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var foo = {
@@ -32,15 +32,15 @@ var foo = {
 };
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-property-literals
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（Recommended）
 
 **.babelrc**
 
@@ -50,13 +50,13 @@ npm install babel-plugin-transform-property-literals
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-property-literals script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

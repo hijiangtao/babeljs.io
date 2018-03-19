@@ -1,10 +1,10 @@
 # babel-plugin-transform-member-expression-literals
 
-Turn valid member expression property literals into plain identifiers
+将有效的成员变量表达式字面量转换为普通标识符。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 obj["foo"] = "isValid";
@@ -13,7 +13,7 @@ obj.const = "isKeyword";
 obj["var"] = "isKeyword";
 ```
 
-**Out**
+**输出**
 
 ```javascript
 obj.foo = "isValid";
@@ -22,15 +22,15 @@ obj["const"] = "isKeyword";
 obj["var"] = "isKeyword";
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-member-expression-literals
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -40,13 +40,13 @@ npm install babel-plugin-transform-member-expression-literals
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-member-expression-literals script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

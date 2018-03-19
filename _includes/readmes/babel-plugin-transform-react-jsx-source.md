@@ -1,30 +1,30 @@
 # babel-plugin-transform-react-jsx-source
 
-> Adds source file and line number to JSX elements.
+> 将源文件和行号添加到 JSX 元素中。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```
 <sometag />
 ```
 
-**Out**
+**输出**
 
 ```
 <sometag __source={ { fileName: 'this/file.js', lineNumber: 10 } } />
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-react-jsx-source
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -34,13 +34,13 @@ npm install --save-dev babel-plugin-transform-react-jsx-source
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-react-jsx-source script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

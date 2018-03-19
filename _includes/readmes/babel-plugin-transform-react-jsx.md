@@ -1,12 +1,12 @@
 # babel-plugin-transform-react-jsx
 
-> Turn JSX into React function calls
+> 将 JSX 转换为 React 的函数调用。
 
-## Example
+## 示例
 
 ### React
 
-**In**
+**输入**
 
 ```javascript
 var profile = <div>
@@ -15,7 +15,7 @@ var profile = <div>
 </div>;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var profile = React.createElement("div", null,
@@ -24,9 +24,9 @@ var profile = React.createElement("div", null,
 );
 ```
 
-### Custom
+### 自定义
 
-**In**
+**输入**
 
 ```javascript
 /** @jsx dom */
@@ -39,7 +39,7 @@ var profile = <div>
 </div>;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 /** @jsx dom */
@@ -52,19 +52,19 @@ var profile = dom( "div", null,
 );
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-react-jsx
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+没有配置:
 
 ```json
 {
@@ -72,7 +72,7 @@ Without options:
 }
 ```
 
-With options:
+使用配置:
 
 ```json
 {
@@ -84,13 +84,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-react-jsx script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -98,18 +98,18 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `pragma`
 
-`string`, defaults to `React.createElement`.
+`string`，默认为 `React.createElement`。
 
-Replace the function used when compiling JSX expressions.
+替换编译 JSX 表达式时，使用的函数。
 
-Note that the `@jsx React.DOM` pragma has been deprecated as of React v0.12
+请注意 `@jsx React.DOM` 编译指示从 React v0.12 开始已被弃用。
 
 ### `useBuiltIns`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-When spreading props, use `Object.assign` directly instead of Babel's extend helper.
+当传递 props 时，直接使用 Object.assign 而不是使用 Babel 的 helper 扩展。

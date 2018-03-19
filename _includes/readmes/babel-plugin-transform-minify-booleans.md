@@ -1,32 +1,32 @@
 # babel-plugin-transform-minify-booleans
 
-This plugin allows Babel to transform boolean literals into `!0` for `true` and `!1` for `false`.
+该插件允许 Babel 将 boolean 字面量进行转换 `!0` 代表 `true`，`!1` 代表 `false`。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 true;
 false;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 !0;
 !1;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-minify-booleans
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -36,13 +36,13 @@ npm install babel-plugin-transform-minify-booleans
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-minify-booleans script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

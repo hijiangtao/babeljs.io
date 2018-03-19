@@ -1,14 +1,14 @@
 # babel-plugin-transform-flow-comments
 
-> Turn flow type annotations into comments.
+> 将 flow 类型注释转换为注释。
 
-You should be able to use this plugin instead of `babel-plugin-flow-strip-types` to preserve the `/* @flow */` directive and still use flow.
+你应该使用这个插件而不是 `babel-plugin-flow-strip-types`，以保存 `/* @flow */` 指令并仍然使用流。
 
-[Flow Comments Blog Post](http://flowtype.org/blog/2015/02/20/Flow-Comments.html)
+[Flow 注释博客](http://flowtype.org/blog/2015/02/20/Flow-Comments.html)
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 function foo(bar?) {}
@@ -22,7 +22,7 @@ import type A, { B, C } from './types';
 import typeof D, { E, F } from './types';
 ```
 
-**Out**
+**输出**
 
 ```javascript
 "use strict";
@@ -38,15 +38,15 @@ function foo(x /*: number*/) /*: string*/ {}
 /*:: import typeof D, { E, F } from './types';*/
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-flow-comments
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -56,13 +56,13 @@ npm install --save-dev babel-plugin-transform-flow-comments
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-flow-comments script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

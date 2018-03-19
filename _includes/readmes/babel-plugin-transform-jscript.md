@@ -1,10 +1,10 @@
 # babel-plugin-transform-jscript
 
-> This plugin allows Babel to transform named function expressions into function declarations to get around some [particularly nasty JScript bugs](https://kangax.github.io/nfe/#jscript-bugs) related to name function expressions.
+> 该插件允许 Babel 将命名函数表达式转换为函数声明，以解决与声明式函数表达式相关的一些[特别讨厌的 JScript 错误](https://kangax.github.io/nfe/#jscript-bugs)。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 var foo = function bar() {
@@ -12,7 +12,7 @@ var foo = function bar() {
 };
 ```
 
-**Out**
+**输出**
 
 ```javascript
 "use strict";
@@ -24,15 +24,15 @@ var foo = (function () {
 })();
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-jscript
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -42,13 +42,13 @@ npm install --save-dev babel-plugin-transform-jscript
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-jscript script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

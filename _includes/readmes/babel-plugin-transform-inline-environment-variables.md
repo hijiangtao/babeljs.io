@@ -1,41 +1,41 @@
 # babel-plugin-transform-inline-environment-variables
 
-Inline environment variables
+内联环境变量
 
-## Example
+## 示例
 
-### In
+### 输入
 
 ```js
-// assuming process.env.NODE_ENV is actually "development"
+// 假设 process.env.NODE_ENV 实际上是 "development"
 process.env.NODE_ENV;
 ```
 
-### Out
+### 输出
 
 ```js
 "development";
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-inline-environment-variables
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
 ```json
-// without options
+// 没有选项：
 {
   "plugins": ["transform-inline-environment-variables"]
 }
 
-// with options
+// 使用选项：
 {
   "plugins": [
     ["transform-inline-environment-variables", {
@@ -47,13 +47,13 @@ npm install babel-plugin-transform-inline-environment-variables
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-inline-environment-variables script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -61,7 +61,7 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
-+ `include` - array of environment variables to include
-+ `exclude` - array of environment variables to exclude
++ `include` - 需要使用环境变量的数组
++ `exclude` - 不需要使用环境变量的数组

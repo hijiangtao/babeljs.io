@@ -1,10 +1,10 @@
 # babel-plugin-transform-react-constant-elements
 
-> Treat React JSX elements as value types and hoist them to the highest scope
+> 将 React JSX 元素视为值类型，并将它们提高到最高级作用域。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```jsx
 const Hr = () => {
@@ -12,7 +12,7 @@ const Hr = () => {
 };
 ```
 
-**Out**
+**输出**
 
 ```jsx
 const _ref = <hr className="hr" />;
@@ -24,7 +24,7 @@ const Hr = () => {
 
 **Deopts**
 
-- **Spread Operator**
+- **展开运算符**
 
   ```jsx
   <div {...foobar} />
@@ -37,15 +37,15 @@ const Hr = () => {
   <div ref={node => this.node = node} />
   ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-react-constant-elements
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -55,13 +55,13 @@ npm install --save-dev babel-plugin-transform-react-constant-elements
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-react-constant-elements script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -69,6 +69,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## References
+## 参考
 
-* [[facebook/react#3226] Optimizing Compiler: Reuse Constant Value Types like ReactElement](https://github.com/facebook/react/issues/3226)
+* [[facebook/react#3226] 优化编译器：重用像 ReactElement 这样的常量值类型](https://github.com/facebook/react/issues/3226)

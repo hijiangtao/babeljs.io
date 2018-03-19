@@ -1,18 +1,17 @@
 # babel-plugin-transform-node-env-inline
 
-Inline the `NODE_ENV` environment variable and if it's a part of a binary expression
-(eg. `process.env.NODE_ENV === "development"`) then statically evaluate and replace it.
+内联 `NODE_ENV` 环境变量，如果它是二元表达式的一部分（例如： `process.env.NODE_ENV === "development"`），则静态评估并替换它。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 process.env.NODE_ENV === "development";
 process.env.NODE_ENV === "production";
 ```
 
-**Out**
+**输出**
 
 ```sh
 NODE_ENV=development babel in.js --plugins transform-node-env-inline
@@ -23,15 +22,15 @@ true;
 false;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-node-env-inline
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -41,13 +40,13 @@ npm install babel-plugin-transform-node-env-inline
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-node-env-inline script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

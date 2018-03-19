@@ -1,10 +1,10 @@
 # babel-plugin-transform-react-jsx-compat
 
-> Turn JSX into React Pre-0.12 function calls
+> 将 JSX 转换为 React Pre-0.12 的函数调用方式。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 var profile = <div>
@@ -13,7 +13,7 @@ var profile = <div>
 </div>;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var profile = React.DOM.div(null,
@@ -22,15 +22,15 @@ var profile = React.DOM.div(null,
 );
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-react-jsx-compat
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -40,13 +40,13 @@ npm install --save-dev babel-plugin-transform-react-jsx-compat
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-react-jsx-compat script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

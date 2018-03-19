@@ -1,30 +1,30 @@
 # babel-plugin-transform-flow-strip-types
 
-> Strip all [flow](http://flowtype.org) type annotations and declarations from your output code.
+> 从输出的代码中去除所有 [flow](http://flowtype.org) 类型的注释和声明。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 function foo(one: any, two: number, three?): string {}
 ```
 
-**Out**
+**输出**
 
 ```javascript
 function foo(one, two, three) {}
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-flow-strip-types
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -34,13 +34,13 @@ npm install --save-dev babel-plugin-transform-flow-strip-types
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-flow-strip-types script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

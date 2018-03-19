@@ -1,32 +1,32 @@
 # babel-plugin-transform-regexp-constructors
 
-This changes RegExp constructors into literals if the RegExp arguments are strings.
+如果 RegExp 参数是字符串，这会将 RegExp 构造函数更改为字符串。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 const foo = 'ab+';
 var a = new RegExp(foo+'c', 'i');
 ```
 
-**Out**
+**输出**
 
 ```javascript
 const foo = 'ab+';
 var a = /ab+c/i;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-transform-regexp-constructors
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（Recommended）
 
 **.babelrc**
 
@@ -36,13 +36,13 @@ npm install babel-plugin-transform-regexp-constructors
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-regexp-constructors script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

@@ -1,16 +1,16 @@
 # babel-plugin-transform-object-assign
 
-> Replace `Object.assign` with an inline helper. If you are authoring an application, rather than a library, it is recommended that you use the `Object.assign` polyfill instead.
+> 用内联的 helper 替换 `Object.assign`。如果你正在编写应用程序而不是库，建议你改为使用 `Object.assign` polyfill 代替。
 
-## Example
+## 实例
 
-**In**
+**输入**
 
 ```javascript
 Object.assign(a, b);
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var _extends = ...;
@@ -18,24 +18,24 @@ var _extends = ...;
 _extends(a, b);
 ```
 
-## Caveats
+## 注意事项
 
-- Will only work with code of the form `Object.assign` or `Object['assign']`. The following patterns are not supported:
+- 只能使用 `Object.assign` 或 Object['assign'] 形式的代码。不支持以下这种方式：
 
   ```javascript
   var { assign } = Object;
   var assign = Object.assign;
   ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-object-assign
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -45,13 +45,13 @@ npm install --save-dev babel-plugin-transform-object-assign
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-object-assign script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
