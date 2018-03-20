@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-modules-systemjs
 
-> This plugin transforms ES2015 modules to [SystemJS](https://github.com/systemjs/systemjs).
+> 该插件将 ES2015 模块转译为 [SystemJS](https://github.com/systemjs/systemjs)。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 export default 42;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 System.register([], function (_export, _context) {
@@ -23,19 +23,19 @@ System.register([], function (_export, _context) {
 });
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-modules-systemjs
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+没有选项：
 
 ```json
 {
@@ -43,7 +43,7 @@ Without options:
 }
 ```
 
-With options:
+使用选项：
 
 ```json
 {
@@ -56,13 +56,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-modules-systemjs script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

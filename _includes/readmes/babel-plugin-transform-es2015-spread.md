@@ -1,36 +1,36 @@
 # babel-plugin-transform-es2015-spread
 
-> Compile ES2015 spread to ES5
+> 将 ES2015 的扩展（spread）编译为 ES5
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```js
 var a = ['a', 'b', 'c'];
 var b = [...a, 'foo'];
 ```
 
-**Out**
+**输出**
 
 ```js
 var a = [ 'a', 'b', 'c' ];
 var b = [].concat(a, [ 'foo' ]);
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-spread
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+没有选项：
 
 ```json
 {
@@ -38,7 +38,7 @@ Without options:
 }
 ```
 
-With options:
+使用选项：
 
 ```json
 {
@@ -50,13 +50,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-spread script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -64,10 +64,10 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `loose`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-In loose mode, **all** iterables are assumed to be arrays.
+在松散（loose）模式下，**所有**迭代都会被假定为数组。

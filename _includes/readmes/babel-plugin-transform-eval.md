@@ -1,30 +1,30 @@
 # babel-plugin-transform-eval
 
-> This plugin allows Babel to compile eval calls with string literals.
+> 该插件允许 Babel 编译带有字符串的 eval 调用。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 eval("(() => 'foo')");
 ```
 
-**Out**
+**输出**
 
 ```javascript
 eval("(function () { return 'foo'; })");
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-eval
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -34,13 +34,13 @@ npm install --save-dev babel-plugin-transform-eval
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-eval script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

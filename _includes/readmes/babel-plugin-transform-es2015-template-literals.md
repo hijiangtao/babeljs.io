@@ -1,34 +1,34 @@
 # babel-plugin-transform-es2015-template-literals
 
-> Compile ES2015 template literals to ES5
+> 将 ES2015 模板字符串编译为 ES5
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 `foo${bar}`;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 "foo" + bar;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-template-literals
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+没有选项：
 
 ```json
 {
@@ -36,7 +36,7 @@ Without options:
 }
 ```
 
-With options:
+使用选项：
 
 ```json
 {
@@ -49,13 +49,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-template-literals script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -63,27 +63,27 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `loose`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-In loose mode, tagged template literal objects aren't frozen.
+在松散（loose）模式下，被标记的模板字符串对象不会被冻结。
 
 ### `spec`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-This option wraps all template literal expressions with `String`. See [babel/babel#1065](https://github.com/babel/babel/issues/1065) for more info.
+该选项用 `String` 包装所有模板字符串的表达式。请查阅 [babel/babel#1065](https://github.com/babel/babel/issues/1065) 了解更多。
 
-**In**
+**输入**
 
 ```javascript
 `foo${bar}`;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 "foo" + String(bar);

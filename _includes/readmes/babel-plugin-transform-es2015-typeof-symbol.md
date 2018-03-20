@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-typeof-symbol
 
-> ES6 introduces a new native type called [symbols](https://babeljs.io/learn-es2015/#ecmascript-2015-features-symbols). This transformer wraps all `typeof` expressions with a method that replicates native behaviour. (ie. returning "symbol" for symbols)
+> ES6 引入了一种称为 [symbols](https://babeljs.cn/learn-es2015/#ecmascript-2015-features-symbols) 的新类型。该转译器用类似原生行为的方法包装了所有 `typeof` 表达式（即，为 symbols 返回 "symbol"）。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 typeof Symbol() === "symbol";
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var _typeof = function (obj) {
@@ -20,15 +20,15 @@ var _typeof = function (obj) {
 _typeof(Symbol()) === "symbol";
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-typeof-symbol
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -38,13 +38,13 @@ npm install --save-dev babel-plugin-transform-es2015-typeof-symbol
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-typeof-symbol script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

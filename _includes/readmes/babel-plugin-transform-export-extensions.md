@@ -1,23 +1,23 @@
 # babel-plugin-transform-export-extensions
 
-> Compile additional export-from statements to ES2015
+> 额外的导出语句编译为 ES2015
 
-## Example
+## 示例
 
 ```js
 export * as ns from 'mod';
 export v from 'mod';
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-export-extensions
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -27,21 +27,21 @@ npm install --save-dev babel-plugin-transform-export-extensions
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-export-extensions script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
   plugins: ["transform-export-extensions"]
 });
 ```
-## References
+## 参考
 
-* ~~[Proposal: Additional export-from statements in ES7](https://github.com/leebyron/ecmascript-more-export-from)~~ (Withdrawn)
-* [ECMAScript Proposal: export ns from](https://github.com/leebyron/ecmascript-export-ns-from)
-* [ECMAScript Proposal: export default from](https://github.com/leebyron/ecmascript-export-default-from)
+* ~~[提案：ES7 中额外的 export-from 语句](https://github.com/leebyron/ecmascript-more-export-from)~~ (Withdrawn)
+* [ECMAScript 提案：export ns from](https://github.com/leebyron/ecmascript-export-ns-from)
+* [ECMAScript 提案：export default from](https://github.com/leebyron/ecmascript-export-default-from)

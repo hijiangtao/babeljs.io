@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-sticky-regex
 
-> Compile ES2015 sticky regex to an ES5 RegExp constructor
+> 将 ES2015 的粘性（sticky）正则表达式编译为 ES5 的 RegExp  构造函数
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-sticky-regex
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-plugin-transform-es2015-sticky-regex
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-sticky-regex script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

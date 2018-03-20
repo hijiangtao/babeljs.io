@@ -1,28 +1,26 @@
 # babel-plugin-transform-es2015-parameters
 
-> Compile ES2015 default and rest parameters to ES5
+> 将 ES2015 的默认（defalut）参数和多余（reset）参数编译为 ES5
 
-This plugin transforms ES2015 parameters to ES5, this includes:
+该插件将 ES2015 的参数转译为 ES2015
 
-- Destructuring parameters
-- Default parameters
-- Rest parameters
+- 解构参数（Destructuring parameters）
+- 默认参数（Default parameters）
+- 多余参数（Rest parameters）
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-parameters
 ```
 
-## Caveats
+## 注意事项
 
-Default parameters desugar into `let` declarations to retain proper semantics. If this is
-not supported in your environment then you'll need the
-[transform-block-scoping](http://babeljs.io/docs/plugins/transform-es2015-block-scoping) plugin.
+默认参数解析为 `let` 声明以保留正确的语义。如果你的环境不支持，那么你需要使用 [transform-block-scoping](http://babeljs.cn/docs/plugins/transform-es2015-block-scoping) 插件。
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -32,13 +30,13 @@ not supported in your environment then you'll need the
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-parameters script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

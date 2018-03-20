@@ -1,22 +1,22 @@
 # babel-plugin-transform-es2015-shorthand-properties
 
-> Compile ES2015 shorthand properties to ES5
+> 将 ES2015 属性简写（shorthand properties）编译为 ES5
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```js
 var o = { a, b, c };
 ```
 
-**Out**
+**输出**
 
 ```js
 var o = { a: a, b: b, c: c };
 ```
 
-**In**
+**输入**
 
 ```js
 var cat = {
@@ -26,7 +26,7 @@ var cat = {
 };
 ```
 
-**Out**
+**输出**
 
 ```js
 var cat = {
@@ -36,15 +36,15 @@ var cat = {
 };
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-shorthand-properties
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -54,13 +54,13 @@ npm install --save-dev babel-plugin-transform-es2015-shorthand-properties
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-shorthand-properties script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

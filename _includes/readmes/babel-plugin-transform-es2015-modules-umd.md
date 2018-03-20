@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-modules-umd
 
-> This plugin transforms ES2015 modules to [Universal Module Definition (UMD)](https://github.com/umdjs/umd).
+> 该插件将 ES2015 模块转译为 [Universal Module Definition (UMD)](https://github.com/umdjs/umd)。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 export default 42;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 (function (global, factory) {
@@ -36,15 +36,15 @@ export default 42;
 });
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-modules-umd
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -54,9 +54,7 @@ npm install --save-dev babel-plugin-transform-es2015-modules-umd
 }
 ```
 
-You can also override the names of particular libraries when this module is
-running in the browser.  For example the `es6-promise` library exposes itself
-as `global.Promise` rather than `global.es6Promise`. This can be accommodated by:
+当模块在浏览器中运行时，你可以覆盖特定的库的名称。例如 `es-promise` 库将自己公开为 `global.Promise` 而不是 `global.es6Promise`。这可以通过：
 
 ```json
 {
@@ -70,27 +68,24 @@ as `global.Promise` rather than `global.es6Promise`. This can be accommodated by
 }
 ```
 
-#### Default semantics
+#### 默认语义（semantics）
 
-There are a few things to note about the default semantics.
+关于默认语义有几点需要注意。
 
-_First_, this transform uses the
-[basename](https://en.wikipedia.org/wiki/Basename) of each import to generate
-the global names in the UMD output. This means that if you're importing
-multiple modules with the same basename, like:
+_首先_，该转译使用 [basename](https://en.wikipedia.org/wiki/Basename) 在 UMD 输出中生成全局名称。这意味着你可以导入多个具有相同名称的 basename 的模块，比如：
 
 ```js
 import fooBar1 from "foo-bar";
 import fooBar2 from "./mylib/foo-bar";
 ```
 
-it will transpile into two references to the same browser global:
+它会将两个引用传递给同一个浏览器全局：
 
 ```js
 factory(global.fooBar, global.fooBar);
 ```
 
-If you set the plugin options to:
+如果你设置插件选项：
 
 ```json
 {
@@ -101,17 +96,16 @@ If you set the plugin options to:
 }
 ```
 
-it will still transpile both to one browser global:
+它仍然会传递给同一个浏览器全局：
 
 ```js
 factory(global.fooBAR, global.fooBAR);
 ```
 
-because again the transform is only using the basename of the import.
+因为转译知识使用导入的 basename。
 
-_Second_, the specified override will still be passed to the `toIdentifier`
-function in [babel-types/src/converters](https://github.com/babel/babel/blob/master/packages/babel-types/src/converters.js).
-This means that if you specify an override as a member expression like:
+_其次_，指定的覆盖仍然会传递给 [babel-types/src/converters](https://github.com/babel/babel/blob/master/packages/babel-types/src/converters.js) 中的 `toIdentifier` 函数。
+这意味着如果你重写指定为成员的表达式，如：
 
 ```json
 {
@@ -121,40 +115,33 @@ This means that if you specify an override as a member expression like:
 }
 ```
 
-this will _not_ transpile to `factory(global.fizz.buzz)`. Instead, it will
-transpile to `factory(global.fizzBuzz)` based on the logic in `toIdentifier`.
+这将_不会_传递给 `factory(global.fizz.buzz)`。相反，它会根据 `toIdentifier` 中的逻辑传递给 `factory(global.fizzBuzz)`。
 
-_Third_, you cannot override the exported global name.
+_然后_，你无法覆盖导出的全局名称。
 
-#### More flexible semantics with `exactGlobals: true`
+#### `exactGlobals: true` 具有更灵活的语义
 
-All of these behaviors can limit the flexibility of the `globals` map. To
-remove these limitations, you can set the `exactGlobals` option to `true`.
-Doing this instructs the plugin to:
+所有这些行为都会限制 `globals` 映射的灵活性。要删除这些限制，你可以将 `exactGlobals` 选项设置为 `true`。
+这样做会告诉插件：
 
-1. always use the full import string instead of the basename when generating
-the global names
-2. skip passing `globals` overrides to the `toIdentifier` function. Instead,
-they are used exactly as written, so you will get errors if you do not use
-valid identifiers or valid uncomputed (dot) member expressions.
-3. allow the exported global name to be overridden via the `globals` map. Any
-override must again be a valid identifier or valid member expression.
+1. 生成全局名称时，始终使用完成的导入字符串而不是 basename
+2. 跳过将 `globals` 覆盖传递到 `toIdentifier` 函数。相反，它们完全按照书面使用，所以如果你不使用有效的标识符，或者有效的 uncomputed（点）成员表达式，你会得到 error。
+3. 允许导出的全局名称通过 `globals` 映射覆盖。任何覆盖必须再次成为有效的表示符或有效的成员表达式。
 
-Thus, if you set `exactGlobals` to `true` and do not pass any overrides, the
-first example of:
+因此，如果你将 `exactGlobals` 设置为 `true` 并且并通过任何覆盖，那么第一个例子为：
 
 ```js
 import fooBar1 from "foo-bar";
 import fooBar2 from "./mylib/foo-bar";
 ```
 
-will transpile to:
+将传递给：
 
 ```js
 factory(global.fooBar, global.mylibFooBar);
 ```
 
-And if you set the plugin options to:
+如果你将插件选项设置为：
 
 ```json
 {
@@ -166,13 +153,13 @@ And if you set the plugin options to:
 }
 ```
 
-then it'll transpile to:
+那么它会转化为：
 
 ```js
 factory(global.fooBAR, global.mylib.fooBar)
 ```
 
-Finally, with the plugin options set to:
+最终，将插件选项设置为：
 
 ```json
 {
@@ -189,7 +176,7 @@ Finally, with the plugin options set to:
 }
 ```
 
-it will transpile to:
+它会传递给：
 
 ```js
 factory(mod.exports);
@@ -199,13 +186,13 @@ global.My.Custom.Module = global.My.Custom.Module || {};
 global.My.Custom.Module.Name = mod.exports;
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-modules-umd script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

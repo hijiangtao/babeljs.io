@@ -1,39 +1,39 @@
 # babel-plugin-transform-exponentiation-operator
 
-> Compile exponentiation operator to ES5
+> 指数运算符编译为 ES5
 
-## Example
+## 示例
 
 ```js
 // x ** y
 
 let squared = 2 ** 2;
-// same as: 2 * 2
+// 等同于：2 * 2
 
 let cubed = 2 ** 3;
-// same as: 2 * 2 * 2
+// 等同于：2 * 2 * 2
 
 
 // x **= y
 
 let a = 2;
 a **= 2;
-// same as: a = a * a;
+// 等同于：a = a * a;
 
 let b = 3;
 b **= 3;
-// same as: b = b * b * b;
+// 等同于：b = b * b * b;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-exponentiation-operator
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -43,13 +43,13 @@ npm install --save-dev babel-plugin-transform-exponentiation-operator
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-exponentiation-operator script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -57,7 +57,7 @@ require("babel-core").transform("code", {
 });
 ```
 
-## References
+## 参考
 
-* [Proposal: Exponentiation Operator](https://github.com/rwaldron/exponentiation-operator)
-* [Spec: Exponential Operator](https://rwaldron.github.io/exponentiation-operator/)
+* [提案: 指数运算符（Exponentiation Operator）](https://github.com/rwaldron/exponentiation-operator)
+* [Spec: 指数运算符（Exponential Operator）](https://rwaldron.github.io/exponentiation-operator/)

@@ -1,32 +1,32 @@
 # babel-plugin-transform-es2015-unicode-regex
 
-> Compile ES2015 unicode regex to ES5
+> 将 ES2015 的 unicode 正则表达式编译为 ES5
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```js
 var string = "foo💩bar";
 var match = string.match(/foo(.)bar/u);
 ```
 
-**Out**
+**输出**
 
 ```js
 var string = "foo💩bar";
 var match = string.match(/foo((?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))bar/);
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-unicode-regex
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -36,13 +36,13 @@ npm install --save-dev babel-plugin-transform-es2015-unicode-regex
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-unicode-regex script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
