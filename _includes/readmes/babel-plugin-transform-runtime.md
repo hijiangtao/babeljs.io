@@ -6,13 +6,13 @@
 
 ## 为什么?
 
-Babel 使用了非常小的 helpers 来实现诸如 `_extend` 等常用功能。默认情况下，它将被添加到每个需要它的文件中。这种重复（操作）有时是不必要的，特别是当你的应用程序被拆分为多个文件时。
+Babel 使用了非常小的 helpers 来实现诸如 `_extend` 等常用功能。默认情况下，它将被添加到每个通过 require 引用它的文件中。这种重复（操作）有时是不必要的，特别是当你的应用程序被拆分为多个文件时。
 
 这时则需要使用 `transform-runtime`：所有的 helper 都会引用模块 `babel-runtime`，以避免编译输出的重复问题。这个运行时会被编译到你的构建版本当中。
 
-这个编译器的另外一个目的就是为你的代码创建一个沙盒环境。如果你使用了 [babel-polyfill](https://babeljs.cn/docs/usage/polyfill/)，它提供了诸如 Promise，Set 以及 Map 之类的内置插件，这些将污染全局作用域。虽然这对于应用程序或命令行工具来说可能是好事，但如果你的代码打算发布为供其他人使用的库，或你无法完全控制代码运行的环境，则会成为问题。
+这个转译器的另外一个目的就是为你的代码创建一个沙盒环境。如果你使用了 [babel-polyfill](https://babeljs.cn/docs/usage/polyfill/)，它提供了诸如 `Promise`，`Set` 以及 `Map` 之类的内置插件，这些将污染全局作用域。虽然这对于应用程序或命令行工具来说可能是好事，但如果你的代码打算发布为供其他人使用的库，或你无法完全控制代码运行的环境，则会成为问题。
 
-编译器将这些内置插件起了别名 `core-js`，这样你就可以无缝的使用它们，并且无需使用 polyfill。
+转译器将这些内置插件起了别名 `core-js`，这样你就可以无缝的使用它们，并且无需使用 polyfill。
 
 请参阅 [Technical details](#technical-details) 以获取更多信息，可以了解它如何工作以及发生转换的类型。
 
@@ -26,7 +26,7 @@ Babel 使用了非常小的 helpers 来实现诸如 `_extend` 等常用功能。
 npm install --save-dev babel-plugin-transform-runtime
 ```
 
-并且 `babel-runtime` 应作为生产依赖 (使用 `--save`).
+并且将 `babel-runtime` 作为生产依赖（使用 `--save`）。
 
 ```sh
 npm install --save babel-runtime
@@ -129,7 +129,7 @@ import extends from 'flavortown/runtime/helpers/extends';
 * 自动引入 `babel-runtime/core-js` 并映射 ES6 静态方法和内置插件。
 * 移除内联的 Babel helper 并使用模块 `babel-runtime/helpers` 代替。
 
-这意味着什么？基本上，你可以使用诸如 `Promise`，`Set`，`Symbol` 等内置函数，以及使用所有需要无法填充的 Babel 功能，无全局污染，因此非常适合作为库使用。
+这意味着什么？基本上，你可以使用诸如 `Promise`，`Set`，`Symbol` 等内置函数，以及所有需要 polyfill 来完成且不带来全局污染的 Babel 功能，因此非常适合作为库使用。
 
 确保你引入 `babel-runtime` 作为依赖。
 
@@ -163,9 +163,9 @@ function foo() {
 }
 ```
 
-这并不理想，因为它依赖于包含 regenerator 运行时，这会污染全局作用域。
+这并不理想，因为它依赖于被包含的 regenerator 运行时，这会污染全局作用域。
 
-然而，使用 `runtime` 编译器，它被编译为：
+然而，使用 `runtime` 转译器，它被编译为：
 
 ```javascript
 "use strict";
@@ -197,7 +197,7 @@ function foo() {
 
 有时你可能想要使用新的内置函数，例如 `Map`，`Set`，`Promise` 等。使用这些函数的唯一方式通常是引入一个污染全局的 polyfill。
 
-`runtime` 编译器做了如下改变：
+`runtime` 转译器做了如下改变：
 
 ```javascript
 var sym = Symbol();
@@ -240,7 +240,7 @@ console.log((0, _getIterator3.default)(arr));
 ### Helper aliasing
 
 通常，Babel 会将 helper 放置在文件顶部执行通用任务，以避免在文件中出现重复代码。有时这些 helper 可能会变得笨重，并且在文件中添加不必要的重复代码。该 `runtime`
-编译器将所有 helper 调用替换为一个模块。
+转译器将所有 helper 调用替换为一个模块。
 
 这意味着下面的代码：
 
@@ -261,7 +261,7 @@ var Person = function Person() {
 };
 ```
 
-`runtime` 编译器会将其变成：
+`runtime` 转译器会将其变成：
 
 ```javascript
 "use strict";
