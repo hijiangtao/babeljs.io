@@ -1,6 +1,6 @@
 # babel-plugin-transform-es2015-typeof-symbol
 
-> ES6 引入了一种称为 [symbols](https://babeljs.cn/learn-es2015/#ecmascript-2015-features-symbols) 的新类型。该转译器用类似原生行为的方法包装了所有 `typeof` 表达式（即，为 symbols 返回 "symbol"）。
+> ES6 引入了一种称为 [symbols](https://babeljs.cn/learn-es2015/#ecmascript-2015-features-symbols) 新的原生类型。该转译器用类似原生行为的方法包装了所有 `typeof` 表达式（即，为 symbols 返回 "symbol"）。
 
 ## 示例
 

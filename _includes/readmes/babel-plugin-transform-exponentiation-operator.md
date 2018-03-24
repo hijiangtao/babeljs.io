@@ -59,5 +59,5 @@ require("babel-core").transform("code", {
 
 ## 参考
 
-* [提案: 指数运算符（Exponentiation Operator）](https://github.com/rwaldron/exponentiation-operator)
-* [Spec: 指数运算符（Exponential Operator）](https://rwaldron.github.io/exponentiation-operator/)
+* [提案：指数运算符（Exponentiation Operator）](https://github.com/rwaldron/exponentiation-operator)
+* [规范：指数运算符（Exponential Operator）](https://rwaldron.github.io/exponentiation-operator/)

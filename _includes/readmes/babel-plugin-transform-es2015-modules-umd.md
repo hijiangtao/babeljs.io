@@ -54,7 +54,7 @@ npm install --save-dev babel-plugin-transform-es2015-modules-umd
 }
 ```
 
-当模块在浏览器中运行时，你可以覆盖特定的库的名称。例如 `es-promise` 库将自己公开为 `global.Promise` 而不是 `global.es6Promise`。这可以通过：
+当模块在浏览器中运行时，你可以覆盖特定的库的名称。例如 `es-promise` 库将自己暴露为 `global.Promise` 而不是 `global.es6Promise`。这可以通过如下代码实现：
 
 ```json
 {
@@ -102,7 +102,7 @@ factory(global.fooBar, global.fooBar);
 factory(global.fooBAR, global.fooBAR);
 ```
 
-因为转译知识使用导入的 basename。
+因为转译只使用 import 中的 basename。
 
 _其次_，指定的覆盖仍然会传递给 [babel-types/src/converters](https://github.com/babel/babel/blob/master/packages/babel-types/src/converters.js) 中的 `toIdentifier` 函数。
 这意味着如果你重写指定为成员的表达式，如：
@@ -115,7 +115,7 @@ _其次_，指定的覆盖仍然会传递给 [babel-types/src/converters](https:
 }
 ```
 
-这将_不会_传递给 `factory(global.fizz.buzz)`。相反，它会根据 `toIdentifier` 中的逻辑传递给 `factory(global.fizzBuzz)`。
+这将_不会_转换到 `factory(global.fizz.buzz)`。相反，它会根据 `toIdentifier` 中的逻辑转换到 `factory(global.fizzBuzz)`。
 
 _然后_，你无法覆盖导出的全局名称。
 
@@ -128,14 +128,14 @@ _然后_，你无法覆盖导出的全局名称。
 2. 跳过将 `globals` 覆盖传递到 `toIdentifier` 函数。相反，它们完全按照书面使用，所以如果你不使用有效的标识符，或者有效的 uncomputed（点）成员表达式，你会得到 error。
 3. 允许导出的全局名称通过 `globals` 映射覆盖。任何覆盖必须再次成为有效的表示符或有效的成员表达式。
 
-因此，如果你将 `exactGlobals` 设置为 `true` 并且并通过任何覆盖，那么第一个例子为：
+因此，如果你将 `exactGlobals` 设置为 `true` 并且不传递任何覆盖，那么第一个例子为：
 
 ```js
 import fooBar1 from "foo-bar";
 import fooBar2 from "./mylib/foo-bar";
 ```
 
-将传递给：
+将转换为：
 
 ```js
 factory(global.fooBar, global.mylibFooBar);
@@ -176,7 +176,7 @@ factory(global.fooBAR, global.mylib.fooBar)
 }
 ```
 
-它会传递给：
+它会转换为：
 
 ```js
 factory(mod.exports);
