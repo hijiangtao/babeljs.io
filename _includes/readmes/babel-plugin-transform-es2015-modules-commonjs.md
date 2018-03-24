@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-modules-commonjs
 
-> This plugin transforms ES2015 modules to [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1).
+> 该插件将 ES2015 转译为 [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1)。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 export default 42;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 Object.defineProperty(exports, "__esModule", {
@@ -20,25 +20,25 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = 42;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-modules-commonjs
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
 ```js
-// without options
+// 没有选项
 {
   "plugins": ["transform-es2015-modules-commonjs"]
 }
 
-// with options
+// 使用选项
 {
   "plugins": [
     ["transform-es2015-modules-commonjs", {
@@ -48,13 +48,13 @@ npm install --save-dev babel-plugin-transform-es2015-modules-commonjs
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-modules-commonjs script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -62,17 +62,15 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `loose`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-As per the spec, `import` and `export` are only allowed to be used at the top
-level. When in loose mode these are allowed to be used anywhere.
+就规范而言，`import` 和 `export` 只允许在顶层使用。在松散模式（loose）下，这些允许在任何地方使用。
 
-And by default, when using exports with babel a non-enumerable `__esModule` property
-is exported.
+默认情况下，当使用 babel 导出时，会导出不可枚举 `__esModule` 属性。
 
 ```javascript
 var foo = exports.foo = 5;
@@ -82,8 +80,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 ```
 
-In environments that don't support this you can enable loose mode on `babel-plugin-transform-es2015-modules-commonjs`
-and instead of using `Object.defineProperty` an assignment will be used instead.
+在不支持此功能的环境中，你可以使用 `babel-plugin-transform-es2015-modules-commonjs` 上启用松散模式下，将使用赋值的方式代替使用 `Object.defineProperty`。
 
 ```javascript
 var foo = exports.foo = 5;
@@ -92,11 +89,9 @@ exports.__esModule = true;
 
 ### `strict`
 
-`boolean`, defaults to `false`
+`boolean`，默认为 `false`。
 
-By default, when using exports with babel a non-enumerable `__esModule` property
-is exported. In some cases this property is used to determine if the import _is_ the
-default export or if it _contains_ the default export.
+默认情况下，当使用 babel 导出时，会导出不可枚举的 `__esModule` 属性。在某些情况下，此属性用于确定导入的_是_默认导出，或者_包含_默认导出。
 
 ```javascript
 var foo = exports.foo = 5;
@@ -106,16 +101,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 ```
 
-In order to prevent the `__esModule` property from being exported, you can set
-the `strict` option to `true`.
+为了防止 `__esModule` 属性被导出，你可以将 `strict` 选项设置为 `true`。
 
 ### `noInterop`
 
-`boolean`, defaults to `false`
+`boolean`，默认为 `false`
 
-By default, when using exports with babel a non-enumerable `__esModule` property
-is exported. This property is then used to determine if the import _is_ the default
-export or if it _contains_ the default export.
+默认情况下，当使用 babel 导出时，会导出不可枚举的 `__esModule` 属性。然后使用该属性确定导入的_是_默认导出，或者_包含_默认导出。
 
 ```javascript
 "use strict";
@@ -129,6 +121,4 @@ function _interopRequireDefault(obj) {
 }
 ```
 
-In cases where the auto-unwrapping of `default` is not needed, you can set the
-`noInterop` option to `true` to avoid the usage of the `interopRequireDefault`
-helper (shown in inline form above).
+在不需要自动解包 `default` 的情况下，可以将 `noInterop` 选项设置为 `true` 以避免使用 `interopRequireDefault` helper（以内联形式显示）。
