@@ -104,7 +104,7 @@ require("babel-core").transform("code", {
 
 `string`，默认为 `React.createElement`。
 
-替换编译 JSX 表达式时，使用的函数。
+替换在编译 JSX 表达式时使用到的函数。
 
 请注意 `@jsx React.DOM` 编译指示从 React v0.12 开始已被弃用。
 
