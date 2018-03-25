@@ -20,7 +20,7 @@ _extends(a, b);
 
 ## 注意事项
 
-- 只能使用 `Object.assign` 或 Object['assign'] 形式的代码。不支持以下这种方式：
+- 只能使用 `Object.assign` 或 Object['assign'] 形式的代码。不支持以下方式：
 
   ```javascript
   var { assign } = Object;
