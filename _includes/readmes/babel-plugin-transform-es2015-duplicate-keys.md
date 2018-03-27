@@ -1,12 +1,12 @@
 # babel-plugin-transform-es2015-duplicate-keys
 
-> Compile objects with duplicate keys to valid strict ES5.
+> 将具有重复键的对象编译为严格模式下的 ES5。
 
-This plugin actually converts duplicate keys in objects to be computed properties, which then must be handled by the [transform-es2015-computed-properties](http://babeljs.io/docs/plugins/transform-es2015-computed-properties) plugin. The final result won't contain any object literals with duplicate keys.
+该插件实际上会将对象中的重复键转换为计算属性，然后必须由 [transform-es2015-computed-properties](http://babeljs.cn/docs/plugins/transform-es2015-computed-properties) 插件处理。最终结果为不具有重复键的对象字面量。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 var x = { a: 5, a: 6 };
@@ -17,7 +17,7 @@ var y = {
 };
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var x = { a: 5, ["a"]: 6 };
@@ -28,15 +28,15 @@ var y = {
 };
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-duplicate-keys
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -46,13 +46,13 @@ npm install --save-dev babel-plugin-transform-es2015-duplicate-keys
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-duplicate-keys script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

@@ -33,7 +33,7 @@ npm install --save-dev babel-plugin-transform-strict-mode
 
 **.babelrc**
 
-不包含选项:
+未包含选项:
 
 ```json
 {

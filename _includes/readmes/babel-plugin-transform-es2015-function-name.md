@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-function-name
 
-> Apply ES2015 function.name semantics to all functions
+> 将 ES2015 的 function.name 语义应用于所有函数。
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-function-name
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-plugin-transform-es2015-function-name
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-function-name script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

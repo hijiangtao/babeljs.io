@@ -35,7 +35,7 @@ npm install --save-dev babel-plugin-transform-es2015-modules-systemjs
 
 **.babelrc**
 
-没有选项：
+未包含选项：
 
 ```json
 {
@@ -43,7 +43,7 @@ npm install --save-dev babel-plugin-transform-es2015-modules-systemjs
 }
 ```
 
-使用选项：
+包含选项：
 
 ```json
 {

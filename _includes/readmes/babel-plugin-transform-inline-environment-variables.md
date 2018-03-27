@@ -30,12 +30,12 @@ npm install babel-plugin-transform-inline-environment-variables
 **.babelrc**
 
 ```json
-// 没有选项：
+// 未包含选项：
 {
   "plugins": ["transform-inline-environment-variables"]
 }
 
-// 使用选项：
+// 包含选项：
 {
   "plugins": [
     ["transform-inline-environment-variables", {

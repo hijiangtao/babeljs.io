@@ -1,10 +1,10 @@
 # babel-plugin-transform-es2015-computed-properties
 
-> Compile ES2015 computed properties to ES5
+> 将 ES2015 计算属性编译为 ES5
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```js
 var obj = {
@@ -15,7 +15,7 @@ var obj = {
 };
 ```
 
-**Out**
+**输出**
 
 ```js
 var _obj;
@@ -45,19 +45,19 @@ var obj = (
 );
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-computed-properties
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+未包含选项：
 
 ```json
 {
@@ -65,7 +65,7 @@ Without options:
 }
 ```
 
-With options:
+包含选项：
 
 ```json
 {
@@ -77,13 +77,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-computed-properties script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -91,19 +91,17 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `loose`
 
-`boolean`, defaults to `false`
+`boolean`，默认为 `false`
 
-Just like method assignment in classes, in loose mode, computed property names
-use simple assignments instead of being defined. This is unlikely to be an issue
-in production code.
+就像类中的方法赋值一样，在松散模式下，计算属性名称使用简单的赋值方式而没有使用定义。这在生产代码中不太可能成为问题。
 
-#### Example
+#### 示例
 
-***In***
+***输入***
 
 ```js
 var obj = {
@@ -114,7 +112,7 @@ var obj = {
 };
 ```
 
-***Out***
+***输出***
 
 ```js
 var _obj;

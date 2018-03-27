@@ -30,7 +30,7 @@ npm install --save-dev babel-plugin-transform-es2015-spread
 
 **.babelrc**
 
-没有选项：
+未包含选项：
 
 ```json
 {
@@ -38,7 +38,7 @@ npm install --save-dev babel-plugin-transform-es2015-spread
 }
 ```
 
-使用选项：
+包含选项：
 
 ```json
 {
@@ -70,4 +70,4 @@ require("babel-core").transform("code", {
 
 `boolean`，默认为 `false`。
 
-在松散（loose）模式下，**所有**迭代都会被假定为数组。
+在松散（loose）模式下，**所有**迭代项都会被假定为数组。

@@ -43,7 +43,7 @@ npm install --save-dev babel-plugin-transform-regenerator
 
 ### 通过 `.babelrc` (推荐)
 
-无选项:
+未包含选项:
 
 ```json
 {
@@ -51,7 +51,7 @@ npm install --save-dev babel-plugin-transform-regenerator
 }
 ```
 
-选项:
+包含选项:
 
 |name|default value|
 |---|---|

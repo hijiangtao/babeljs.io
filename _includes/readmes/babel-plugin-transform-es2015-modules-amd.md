@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-modules-amd
 
-> This plugin transforms ES2015 modules to [Asynchronous Module Definition (AMD)](https://github.com/amdjs/amdjs-api).
+> 该插件将 ES2015 模块转译为 [Asynchronous Module Definition (AMD)](https://github.com/amdjs/amdjs-api)。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 export default 42;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 define(["exports"], function (exports) {
@@ -24,15 +24,15 @@ define(["exports"], function (exports) {
 });
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-modules-amd
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -42,13 +42,13 @@ npm install --save-dev babel-plugin-transform-es2015-modules-amd
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-modules-amd script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -56,6 +56,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-### Options
+### 选项
 
-See options for `babel-plugin-transform-es2015-commonjs`.
+请参阅 `babel-plugin-transform-es2015-commonjs` 的选项。

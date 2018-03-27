@@ -29,14 +29,14 @@ npm install babel-plugin-transform-remove-console
 **.babelrc**
 
 ```json
-// without options
+// 未包含选项
 {
   "plugins": ["transform-remove-console"]
 }
 ```
 
 ```json
-// with options
+// 包含选项
 {
   "plugins": [ ["transform-remove-console", { "exclude": [ "error", "warn"] }] ]
 }

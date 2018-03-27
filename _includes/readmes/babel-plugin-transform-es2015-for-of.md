@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-for-of
 
-> Compile ES2015 for...of to ES5
+> 将 ES2015 的 for...of 编译为 ES5
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```js
 for (var i of foo) {}
 ```
 
-**Out**
+**输出**
 
 ```js
 var _iteratorNormalCompletion = true;
@@ -37,19 +37,19 @@ try {
 }
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-for-of
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+未包含选项:
 
 ```js
 {
@@ -57,7 +57,7 @@ Without options:
 }
 ```
 
-With options:
+包含选项:
 
 ```json
 {
@@ -69,13 +69,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-for-of script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -83,24 +83,24 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `loose`
 
-`boolean`, defaults to `false`
+`boolean`，默认为 `false`
 
-In loose mode, arrays are put in a fast path, thus heavily increasing performance.
-All other iterables will continue to work fine.
+在松散（loose）模式下，数组被放置在一个快速路径下，从而大大提高性能。
+所有其他可迭代项将继续正常工作。
 
-#### Example
+#### 示例
 
-**In**
+**输入**
 
 ```js
 for (var i of foo) {}
 ```
 
-**Out**
+**输出**
 
 ```js
 for (var _iterator = foo, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
@@ -121,22 +121,22 @@ for (var _iterator = foo, _isArray = Array.isArray(_iterator), _i = 0, _iterator
 
 #### Abrupt completions
 
-In loose mode an iterator's `return` method will not be called on abrupt completions caused by thrown errors.
+在松散模式下，迭代器的 `return` 方法不会因抛出错误而导致 abrupt completions。
 
-Please see [google/traceur-compiler#1773](https://github.com/google/traceur-compiler/issues/1773) and
-[babel/babel#838](https://github.com/babel/babel/issues/838) for more information.
+请参与 [google/traceur-compiler#1773](https://github.com/google/traceur-compiler/issues/1773) 和
+[babel/babel#838](https://github.com/babel/babel/issues/838) 了解更多详情。
 
-### Optimization
+### 优化
 
-If a basic array is used, Babel will compile the for-of loop down to a regular for loop.
+如果使用基本数组，Babel 会将 for-of 循环编译为常规 for 循环。
 
-**In**
+**输入**
 
 ```js
 for (let a of [1,2,3]) {}
 ```
 
-**Out**
+**输出**
 
 ```js
 var _arr = [1, 2, 3];

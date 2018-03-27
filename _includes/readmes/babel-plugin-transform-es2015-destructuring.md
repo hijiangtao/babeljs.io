@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-destructuring
 
-> Compile ES2015 destructuring to ES5
+> 将 ES2015 的解构编译为 ES5。
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-destructuring
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-plugin-transform-es2015-destructuring
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-destructuring script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

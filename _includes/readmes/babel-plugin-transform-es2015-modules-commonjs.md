@@ -33,12 +33,12 @@ npm install --save-dev babel-plugin-transform-es2015-modules-commonjs
 **.babelrc**
 
 ```js
-// 没有选项
+// 未包含选项
 {
   "plugins": ["transform-es2015-modules-commonjs"]
 }
 
-// 使用选项
+// 包含选项
 {
   "plugins": [
     ["transform-es2015-modules-commonjs", {

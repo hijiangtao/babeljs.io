@@ -28,7 +28,7 @@ npm install --save-dev babel-plugin-transform-es2015-template-literals
 
 **.babelrc**
 
-没有选项：
+未包含选项：
 
 ```json
 {
@@ -36,7 +36,7 @@ npm install --save-dev babel-plugin-transform-es2015-template-literals
 }
 ```
 
-使用选项：
+包含选项：
 
 ```json
 {

@@ -40,7 +40,7 @@ npm install --save babel-runtime
 
 将以下内容添加到你的 `.babelrc` 文件中：
 
-没有选项：
+未包含选项：
 
 ```json
 {
@@ -48,7 +48,7 @@ npm install --save babel-runtime
 }
 ```
 
-配置选项:
+包含选项:
 
 ```json
 {

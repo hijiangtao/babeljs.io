@@ -1,34 +1,34 @@
 # babel-plugin-transform-es2015-literals
 
-> Compile ES2015 unicode string and number literals to ES5
+> 将 ES2015 的 unicode 字符串和数字字面量编译为 ES5。
 
-## Example
+## 示例
 
-**In**
-
-```js
-var b = 0b11; // binary integer literal
-var o = 0o7; // octal integer literal
-const u = 'Hello\u{000A}\u{0009}!'; // unicode string literals, newline and tab
-```
-
-**Out**
+**输入**
 
 ```js
-var b = 3; // binary integer literal
-var o = 7; // octal integer literal
-const u = 'Hello\n\t!'; // unicode string literals, newline and tab
+var b = 0b11; // 二进制整型字面量
+var o = 0o7; // 八进制整型字面量
+const u = 'Hello\u{000A}\u{0009}!'; // unicode 字符串字面量，换行符和制表符
 ```
 
-## Installation
+**输出**
+
+```js
+var b = 3; // 二进制整型字面量
+var o = 7; // 八进制整型字面量
+const u = 'Hello\n\t!'; // unicode 字符串字面量，换行符和制表符
+```
+
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-literals
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -38,13 +38,13 @@ npm install --save-dev babel-plugin-transform-es2015-literals
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-literals script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
