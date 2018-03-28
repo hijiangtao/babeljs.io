@@ -4,7 +4,7 @@
 
 ## 注意事项
 
-由于 ES5 中的限制(对于 [es2015-classes](http://babeljs.io/docs/plugins/transform-es2015-classes) 插件来说)，无法对子类（如 `Date`，`Array`，`DOM` 等）进行正确分类。
+由于 ES5 中的限制(对于 [es2015-classes](http://babeljs.cn/docs/plugins/transform-es2015-classes) 插件来说)，无法对子类（如 `Date`，`Array`，`DOM` 等）进行正确分类。
 你可以尝试使用基于 `Object.setPrototypeOf` 和 `Reflect.construct` 的 [babel-plugin-transform-builtin-extend](https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend) 插件，但它同样也有些限制。
 
 ## 安装
