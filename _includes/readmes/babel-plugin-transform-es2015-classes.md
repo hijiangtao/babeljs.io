@@ -1,32 +1,31 @@
 # babel-plugin-transform-es2015-classes
 
-> Compile ES2015 classes to ES5
+> 将 ES2015 的类编译为 ES5
 
-## Caveats
+## 注意事项
 
-Built-in classes such as `Date`, `Array`, `DOM` etc cannot be properly subclassed
-due to limitations in ES5 (for the [es2015-classes](http://babeljs.io/docs/plugins/transform-es2015-classes) plugin).
-You can try to use [babel-plugin-transform-builtin-extend](https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend) based on `Object.setPrototypeOf` and `Reflect.construct`, but it also has some limitations.
+由于 ES5 中的限制(对于 [es2015-classes](http://babeljs.io/docs/plugins/transform-es2015-classes) 插件来说)，无法对子类（如 `Date`，`Array`，`DOM` 等）进行正确分类。
+你可以尝试使用基于 `Object.setPrototypeOf` 和 `Reflect.construct` 的 [babel-plugin-transform-builtin-extend](https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend) 插件，但它同样也有些限制。
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-classes
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
 ```js
-// without options
+// 未包含选项
 {
   "plugins": ["transform-es2015-classes"]
 }
 
-// with options
+// 包含选项
 {
   "plugins": [
     ["transform-es2015-classes", {
@@ -36,13 +35,13 @@ npm install --save-dev babel-plugin-transform-es2015-classes
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-classes script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -50,21 +49,19 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `loose`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-#### Method enumerability
+#### 方法枚举
 
-Please note that in loose mode class methods **are** enumerable. This is not in line
-with the spec and you may run into issues.
+请注意，在松散（loose）模式下，类方法**是**可枚举的。这并不符合规范，你可能会遇到问题。
 
-#### Method assignment
+#### 方法分配
 
-Under loose mode, methods are defined on the class prototype with simple assignments
-instead of being defined. This can result in the following not working:
+松散模式下，方法是在类的原型上通过使用简单赋值的方式来替代定义的方式。这可能导致以下代码不能正常工作：
 
 ```javascript
 class Foo {
@@ -75,11 +72,9 @@ class Foo {
 
 class Bar extends Foo {
   bar() {
-    // will throw an error when this method is defined
+    // 当定义该方法时，会引发错误
   }
 }
 ```
 
-When `Bar.prototype.foo` is defined it triggers the setter on `Foo`. This is a
-case that is very unlikely to appear in production code however it's something
-to keep in mind.
+当定义了 `Bar.prototype.foo` 时，它会触发 `Foo` 上的 setter。这一般不太可能会出现在生产代码中，但需要记住（可能会出现问题）。
