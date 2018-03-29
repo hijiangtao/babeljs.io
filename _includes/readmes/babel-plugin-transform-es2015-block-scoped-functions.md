@@ -1,16 +1,16 @@
 # babel-plugin-transform-es2015-block-scoped-functions
 
-> Babel plugin to ensure function declarations at the block level are block scoped.
+> Babel 插件确保块级的函数声明属于块级作用域内。
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-block-scoped-functions
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-plugin-transform-es2015-block-scoped-functions
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-block-scoped-functions script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

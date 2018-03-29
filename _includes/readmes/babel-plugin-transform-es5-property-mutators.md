@@ -1,10 +1,10 @@
 # babel-plugin-transform-es5-property-mutators
 
-> This plugin allows Babel to transform [object initializer mutators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Method_definitions) into `Object.defineProperties`.
+> 该插件允许 Babel 将[对象初始化器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Object_initializer#Method_definitions)转译为 `Object.defineProperties`。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 var foo = {
@@ -14,7 +14,7 @@ var foo = {
 };
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var foo = Object.defineProperties({}, {
@@ -28,15 +28,15 @@ var foo = Object.defineProperties({}, {
 });
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es5-property-mutators
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -46,13 +46,13 @@ npm install --save-dev babel-plugin-transform-es5-property-mutators
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es5-property-mutators script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

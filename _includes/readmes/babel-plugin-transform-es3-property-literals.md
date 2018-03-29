@@ -1,10 +1,10 @@
 # babel-plugin-transform-es3-property-literals
 
-> Ensure that reserved words are quoted in object property keys
+> 确保保留字在对象属性中的引用
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 var foo = {
@@ -12,7 +12,7 @@ var foo = {
 };
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var foo = {
@@ -20,15 +20,15 @@ var foo = {
 };
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es3-property-literals
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -38,13 +38,13 @@ npm install --save-dev babel-plugin-transform-es3-property-literals
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es3-property-literals script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

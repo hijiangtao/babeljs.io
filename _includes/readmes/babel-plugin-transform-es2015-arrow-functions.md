@@ -1,10 +1,10 @@
 # babel-plugin-transform-es2015-arrow-functions
 
-> Compile ES2015 arrow functions to ES5
+> 将 ES2015 的箭头函数编译为 ES5。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 var a = () => {};
@@ -24,7 +24,7 @@ var bob = {
 console.log(bob.printFriends());
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var a = function () {};
@@ -51,19 +51,19 @@ var bob = {
 console.log(bob.printFriends());
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es2015-arrow-functions
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+未包含选项：
 
 ```json
 {
@@ -71,7 +71,7 @@ Without options:
 }
 ```
 
-With options:
+包含选项：
 
 ```json
 {
@@ -81,13 +81,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es2015-arrow-functions script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -95,10 +95,10 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `spec`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-This option wraps the generated function in `.bind(this)` and keeps uses of `this` inside the function as-is, instead of using a renamed `this`. It also adds a runtime check to ensure the functions are not instantiated.
+该选项将生成的函数包装在 `.bind(this)` 中，并保持使用原函数的 `this`，而不是使用重命名的 `this`。它还添加了运行时检查以确保函数是否实例化。

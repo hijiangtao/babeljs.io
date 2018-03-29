@@ -1,30 +1,30 @@
 # babel-plugin-transform-es3-member-expression-literals
 
-> Ensure that reserved words are quoted in property accesses
+> 确保保留字在属性访问中的引用。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 foo.catch;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 foo["catch"];
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-es3-member-expression-literals
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -34,13 +34,13 @@ npm install --save-dev babel-plugin-transform-es3-member-expression-literals
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-es3-member-expression-literals script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
