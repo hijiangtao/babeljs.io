@@ -72,7 +72,7 @@ class Foo {
 
 class Bar extends Foo {
   bar() {
-    // 当定义该方法时，会引发错误
+    // 当该方法已经被定义时，会引发错误
   }
 }
 ```
