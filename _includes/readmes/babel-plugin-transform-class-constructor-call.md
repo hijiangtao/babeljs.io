@@ -1,10 +1,10 @@
 # babel-plugin-transform-class-constructor-call (deprecated)
 
-> Proposal Withdrawn: can be solved with decorators.
+> 提案撤回：可以用装饰器解决。
 
-This plugin allows Babel to transform class constructors.
+该插件允许 Babel 转译类构造函数。
 
-It basically allows to use the [new.target](http://mdn.io/new.target) feature on ES2015 classes:
+它基本上允许使用 ES2015 类的 [new.target](http://mdn.io/new.target) 功能：
 
 ```js
 class Point {
@@ -24,25 +24,25 @@ let p1 = new Point(1, 2); // OK
 let p2 = Point(3, 4); // OK
 ```
 
-## Example
+## 示例
 
-### Date example
-The javascript [Date](http://mdn.io/date) works this way:
+### Date 示例
+javascript [Date](http://mdn.io/date) 以这种方式工作：
 
 ```js
-// You can get a Date instance using the new keyword
+// 你可以使用 new 关键字获取 Date 实例
 let now = new Date();
-console.log(now.getMonth()); // Prints '3'
-console.log(now.toString()); // Prints 'Mon Apr 11 2016 13:26:07 GMT+0100 (BST)'
+console.log(now.getMonth()); // 打印 '3'
+console.log(now.toString()); // 打印 'Mon Apr 11 2016 13:26:07 GMT+0100 (BST)'
 
-// You can get a string of the current date using Date as a function:
+// 你可以使用 Date 作为函数获取当前日期的字符串：
 let nowStr = Date();
-console.log(nowStr); // Prints 'Mon Apr 11 2016 13:26:07 GMT+0100 (BST)'
+console.log(nowStr); // 打印 'Mon Apr 11 2016 13:26:07 GMT+0100 (BST)'
 ```
 
-It is currently possible to implement something like that using [new.target](http://mdn.io/new.target) (see [example in proposal](https://github.com/tc39/ecma262/blob/master/workingdocs/callconstructor.md#motivating-example)) and this new feature makes it available for ES2015 classes.
+目前可以使用 [new.target](http://mdn.io/new.target) 实现类似功能（参阅[提案中的示例](https://github.com/tc39/ecma262/blob/master/workingdocs/callconstructor.md#motivating-example)），并且此新功能使其可用于 ES2015 类。
 
-A date implementation could be:
+日期的实现如下：
 
 ```js
 class Date {
@@ -56,19 +56,19 @@ class Date {
   }
 }
 
-let now = new Date(); // Get a Date instance
-let nowStr = Date(); // Use the 'call constructor()' part to get a string value of the current date
+let now = new Date(); // 获取日期实例
+let nowStr = Date(); // 使用 'call constructor()' 部分来获取当前日期的字符串
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-class-constructor-call
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -78,13 +78,13 @@ npm install --save-dev babel-plugin-transform-class-constructor-call
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-class-constructor-call script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -92,8 +92,8 @@ require("babel-core").transform("code", {
 });
 ```
 
-## References
+## 参考
 
-* [Inactive Proposals](https://github.com/tc39/proposals/blob/master/inactive-proposals.md)
-* [Proposal: Call Constructor](https://github.com/tc39/ecma262/blob/master/workingdocs/callconstructor.md)
-* [Blog post: ECMAScript proposal: function-callable classes](http://www.2ality.com/2015/10/call-constructor-esprop.html)
+* [无效的提案](https://github.com/tc39/proposals/blob/master/inactive-proposals.md)
+* [提案：调用构造函数](https://github.com/tc39/ecma262/blob/master/workingdocs/callconstructor.md)
+* [博客文章：ECMAScript 提案：函数可调用（function-callable）类](http://www.2ality.com/2015/10/call-constructor-esprop.html)

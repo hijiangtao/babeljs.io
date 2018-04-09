@@ -1,20 +1,20 @@
 # babel-plugin-transform-class-properties
 
-> This plugin transforms class propeties
+> 该插件转译类的属性
 
-## Example
+## 示例
 
-Below is a class with four class properties which will be transformed.
+下列是一个具有四个类属性的类，它将被转译。
 
 ```js
   class Bork {
-    //Property initializer syntax
+    // 设置属性初始值语法
     instanceProperty = "bork";
     boundFunction = () => {
       return this.instanceProperty;
     }
 
-    //Static class properties
+    // 静态类属性
     static staticProperty = "babelIsCool";
     static staticFunction = function() {
       return Bork.staticProperty;
@@ -23,36 +23,36 @@ Below is a class with four class properties which will be transformed.
 
   let myBork = new Bork;
 
-  //Property initializers are not on the prototype.
+  // 设置的属性初始值不在原型上
   console.log(myBork.__proto__.boundFunction); // > undefined
 
-  //Bound functions are bound to the class instance.
+  // 绑定函数绑定到类实例
   console.log(myBork.boundFunction.call(undefined)); // > "bork"
 
-  //Static function exists on the class.
+  // 该类拥有静态函数
   console.log(Bork.staticFunction()); // > "babelIsCool"
 ```
 
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-class-properties
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
 ```json
-// without options
+// 未包含选项
 {
   "plugins": ["transform-class-properties"]
 }
 
-// with options
+// 包含选项
 {
   "plugins": [
     ["transform-class-properties", { "spec": true }]
@@ -60,13 +60,13 @@ npm install --save-dev babel-plugin-transform-class-properties
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-class-properties script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -74,14 +74,14 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `spec`
 
-`boolean`, defaults to `false`.
+`boolean`，默认为 `false`。
 
-Class properties are compiled to use `Object.defineProperty`. Static fields are now defined even if they are not initialized.
+类属性使用 `Object.definePropertyClass` 进行编译。即使没有初始化静态字段也是如此。
 
-## References
+## 参考
 
-* [Proposal: ES Class Fields & Static Properties](https://github.com/jeffmo/es-class-static-properties-and-fields)
+* [提案：ES 类字段和静态属性](https://github.com/jeffmo/es-class-static-properties-and-fields)

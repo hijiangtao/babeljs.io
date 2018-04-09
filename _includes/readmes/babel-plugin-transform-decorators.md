@@ -1,12 +1,12 @@
 # babel-plugin-transform-decorators
 
-> Compile class and object decorators to ES5
+> 将类和对象装饰器编译为 ES5。
 
-## Example
+## 示例
 
-(examples are from proposal)
+（例子出自提案）
 
-### Simple class decorator
+### 简单的类（class）装饰器
 
 ```js
 @annotation
@@ -17,7 +17,7 @@ function annotation(target) {
 }
 ```
 
-### Class decorator
+### 类（Class）装饰器
 
 ```js
 @isTestable(true)
@@ -30,7 +30,7 @@ function isTestable(value) {
 }
 ```
 
-### Class function decorator
+### 类（Class）函数装饰器
 
 ```js
 class C {
@@ -46,15 +46,15 @@ function enumerable(value) {
 }
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-decorators
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -64,13 +64,13 @@ npm install --save-dev babel-plugin-transform-decorators
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-decorators script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -78,6 +78,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## References
+## 参考
 
-* [Proposal: Javascript Decorators](https://github.com/wycats/javascript-decorators/blob/master/README.md)
+* [提案：Javascript 装饰器](https://github.com/wycats/javascript-decorators/blob/master/README.md)
